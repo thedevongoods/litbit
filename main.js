@@ -1,4 +1,4 @@
-function register{
+function register(){
 	var email = $("#email").val();
 	var password =$("#password").val();
 
@@ -11,7 +11,7 @@ function register{
 
 }
 
-function login{
+function login(){
 	var email = $("#email").val();
 	var password =$("#password").val();
 	
@@ -24,7 +24,7 @@ function login{
 
 }
 
-function signout{
+function signout(){
 	firebase.auth().signOut().then(function() {
   		// Sign-out successful.
 	}, function(error) {
