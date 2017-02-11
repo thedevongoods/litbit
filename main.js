@@ -1,4 +1,4 @@
-function login{
+function register{
 	var email = $("#email").val();
 	var password =$("#password").val();
 
@@ -11,7 +11,7 @@ function login{
 
 }
 
-function signin{
+function login{
 	var email = $("#email").val();
 	var password =$("#password").val();
 	
