@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>litBit</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css"></style>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+	<script src="http://momentjs.com/downloads/moment.js"></script>
+
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	  	apiKey: "AIzaSyAczPNxSGslsGqyWWF1OsbTo4Ns6xjqeLQ",
+	  	authDomain: "litbit-5608e.firebaseapp.com",
+	  	databaseURL: "https://litbit-5608e.firebaseio.com",
+	  	storageBucket: "litbit-5608e.appspot.com",
+	  	messagingSenderId: "485234969235"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
+	<script src="scripts/main.js"></script>
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://vega.github.io/vega/vega.js"></script>
+	<script src="https://vega.github.io/vega-lite/vega-lite.js"></script>
+	<script src="https://vega.github.io/vega-editor/vendor/vega-embed.js" charset="utf-8"></script>
+
+	<style media="screen">
+		/* Add space between vega-embed links  */
+		.vega-actions a {
+			margin-right: 5px;
+		}
+	</style>
+
+	<script src="scripts/main.js"></script>
+	<script src="scripts/inputUserData.js"></script>
+	<script src="scripts/lineGraph.js"></script>
+</head>
+<body>
+
+	<div class="nav">
+		<div class="navBarContent" id="logo">
+			<img src="images/litbit.png">
+		</div>
+		<div class="navBarContent"><a class="navBarContentLink" href="">Dashboard</a></div>
+		<div class="navBarContent"><a class="navBarContentLink" href="">Log</a></div>
+		<div class="navBarContent"><a class="navBarContentLink" href="">Community</a></div>
+
+		<div class="profile">
+
+			<ul>
+				<li id="login">
+					<a id="login-trigger" href="#" class="">
+						<span><img class="photo" src="images/profile.svg" width="30" height="30" alt=""></span>
+					</a>
+					<div id="login-content" style="display: none;">
+						<form>
+							<fieldset id="inputs">
+								<input id="username" type="email" name="Email" placeholder="Your email address" required="">   
+								<input id="password" type="password" name="Password" placeholder="Password" required="">
+							</fieldset>
+							<fieldset id="actions">
+								<input type="submit" id="submit" value="Log in">
+								<input type="submit" id="SignUpSubmit" value="Sign up">
+
+							</fieldset>
+						</form>
+					</div>                     
+				</li>
+			</ul>
+
+			<a class="NavItemProfile" href="#">
+				<img class="photo" src="images/settings.svg" width="30" height="30" alt="">
+			</a>
+		</div>
+	</div>	
+
+	<div class="dashboard">
+		<div class="dashHeader">
+			<div class="dashDateNav">
+				<span class="timeIcon"></span>
+				<div class="timePeriod">
+					<strong class="weekday">Today</strong>
+					<p class="dateSet">February 11</p>
+				</div>
+				<a href="/contact" id="contact"><img id= "addLogoIMG" src="./images/plus.svg"></a>
+			</div>
+		</div>
+
+		<div class="messagepop pop">
+			<form method="post" id="new_message" action="/messages">
+				<p><label for="pages">Your pages</label><input type="number" size="30" name="number" id="number" /></p>
+				<p><label for="time">Your time</label><input type="number" size="30" name="time" id="time" /></p>
+				<p><label for="goals">Your goals</label><input type="number" size="30" name="goals" id="goals" /></p>
+
+				<p><input type="submit" value="Submit" name="commit" id="message_submit" /> or <a class="close" href="/">Cancel</a></p>
+			</form>
+		</div>
+
+		<div class="cards">
+			<div class="card" style="display: none">
+				<div class="container">
+					<div id="vis">
+						<!-- What user will use for input -->
+						<!--input placeholder='Email' type='text' id='email'-->
+						<!--input placeholder='Password' type='text' id='password'-->
+
+						<!-- button for sending message to message board -->
+
+						<input placeholder='Pages Read' type='number' id='pages'>
+						<input placeholder='Hours Read' type='number' id='time'>
+						<input placeholder='Goals Met' type='number' id='goals'>
+						<button onclick='updateDayInfo()' id='js'>Update Data</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	</html>
