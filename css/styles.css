@@ -105,6 +105,7 @@ body{
 */}
 
 /*SUBMISSION STYLES*/
+
 a.selected {
   background-color:#1F75CC;
   color:white;
@@ -284,7 +285,7 @@ nav li #login-content {
 }
 
 
-/*asfasdfdaf*/
+/*CARDS CSS STYLING*/
 
 .cards{
 	padding: 1%;
