@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css"></style>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-	
+
 	<script src="scripts/main.js"></script>
 	<script>
 	  // Initialize Firebase
@@ -62,6 +62,14 @@
 			</div>
 		</div>
 
+<div class="messagepop pop">
+    <form method="post" id="new_message" action="/messages">
+        <p><label for="email">Your email</label><input type="text" size="30" name="email" id="email" /></p>
+		<p><label for="pages">Your pages</label><input type="number" size="30" name="number" id="number" /></p>
+        <p><label for="time">Your time</label><input type="number" size="30" name="time" id="time" /></p>
+        <p><input type="submit" value="Submit" name="commit" id="message_submit"/> or <a class="close" href="/">Cancel</a></p>
+    </form>
+</div>
 
 		<div class="cardContainer">
 			<div class="card">
@@ -89,15 +97,8 @@
 		</div>
 	</div>
 
-<div class="messagepop pop">
-    <form method="post" id="new_message" action="/messages">
-        <p><label for="email">Your email or name</label><input type="text" size="30" name="email" id="email" /></p>
-        <p><label for="body">Message</label><textarea rows="6" name="body" id="body" cols="35"></textarea></p>
-        <p><input type="submit" value="Send Message" name="commit" id="message_submit"/> or <a class="close" href="/">Cancel</a></p>
-    </form>
-</div>
 
-<a href="/contact" id="contact">Contact Us</a>
+
 
 
 </body>
