@@ -81,12 +81,7 @@ body{
 /* 	min-height: 50vw;
 */}
 
-
-
-
-
-
-
+/*SUBMISSION STYLES*/
 a.selected {
   background-color:#1F75CC;
   color:white;
@@ -119,6 +114,7 @@ label {
   padding-bottom: 8px;
 }
 
+/*CARD STYLES*/
 .cardContainer {
 	display: -webkit-flex;
 	display: flex;

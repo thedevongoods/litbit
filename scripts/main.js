@@ -50,6 +50,7 @@ function signout(){
 
 // SURENDRA CODE FOR STYLING STUFF 
 
+// SUBMISSION
 function deselect(e) {
   $('.pop').slideFadeToggle(function() {
     e.removeClass('selected');
@@ -57,7 +58,7 @@ function deselect(e) {
 }
 
 $(function() {
-  $('#testLogoIMG').on('click', function() {
+  $('#contact').on('click', function() {
     if($(this).hasClass('selected')) {
       deselect($(this));               
     } else {
@@ -68,7 +69,7 @@ $(function() {
   });
 
   $('.close').on('click', function() {
-    deselect($('#testLogoIMG'));
+    deselect($('#contact'));
     return false;
   });
 });
@@ -77,6 +78,7 @@ $.fn.slideFadeToggle = function(easing, callback) {
   return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
 };
 
+// LOG IN 
 $(document).ready(function(){
   $('#login-trigger').click(function(){
     $(this).next('#login-content').slideToggle();

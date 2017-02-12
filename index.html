@@ -4,8 +4,9 @@
 	<title>litBit</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css"></style>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-	<script src="scripts/main.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+	
+	<script src="scripts/main.js"></script>
 	<script>
 	  // Initialize Firebase
 	  var config = {
@@ -88,15 +89,15 @@
 		</div>
 	</div>
 
-	<div class="messagepop pop">
-		<form method="post" id="new_message" action="/messages">
-			<p><label for="pages">Your email</label><input type="text" size="30" name="email" id="email" /></p>
-			<p><label for="times">Your times</label><input type="text" size="30" name="times" id="times" /></p>
-			<p><label for="goals">Your goals</label><input type="text" size="30" name="goals" id="goals" /></p>
+<div class="messagepop pop">
+    <form method="post" id="new_message" action="/messages">
+        <p><label for="email">Your email or name</label><input type="text" size="30" name="email" id="email" /></p>
+        <p><label for="body">Message</label><textarea rows="6" name="body" id="body" cols="35"></textarea></p>
+        <p><input type="submit" value="Send Message" name="commit" id="message_submit"/> or <a class="close" href="/">Cancel</a></p>
+    </form>
+</div>
 
-			<p><input type="submit" value="Submit" name="Submit" id="Submit"/> or <a class="close" href="/">Cancel</a></p>
-		</form>
-	</div>
+<a href="/contact" id="contact">Contact Us</a>
 
 
 </body>
