@@ -16,14 +16,25 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <!-- script we'll make dynamic changes with. You'll have to create this file -->
     <script src='main.js'></script>
+    <script src='inputUserData.js'></script>
 
   </head>
   <body>
     <!-- What user will use for input -->
     <input placeholder='Email' type='text' id='email'>
     <input placeholder='Password' type='text' id='password'>
+
     <!-- button for sending message to message board -->
-    <button onclick='register()' id='js'>Use Plain JS</button>
+    <button onclick='register()' id='js'>Register</button>
+    <button onclick='login()' id='js'>Login</button>
+    <button onclick='signout()' id='js'>Logout</button>
+
+    <br>
+
+    <input placeholder='Pages Read' type='number' id='pages'>
+    <input placeholder='Hours Read' type='number' id='time'>
+    <input placeholder='Goals Met' type='number' id='goals'>
+    <button onclick='updateDayInfo()' id='js'>Update Data</button>
     <!-- Empty div where the messages will show up -->
     <div id='messageBoard'></div>
     <!-- Paste your snippet here, will include firebase CDN -->

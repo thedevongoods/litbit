@@ -1,3 +1,12 @@
+var user = firebase.auth().currentUser;
+
+if(user){
+	console.log("Current user is " + user.email);
+} else {
+
+}
+console.log();
+
 function register(){
 	var email = $("#email").val();
 	var password =$("#password").val();
@@ -21,6 +30,10 @@ function login(){
   		var errorMessage = error.message;
   		// ...
 	});
+
+
+	//console.log(firebase.database.ServerValue.TIMESTAMP.toString());
+	//window.location.href = 'editData.html';
 
 }
 
