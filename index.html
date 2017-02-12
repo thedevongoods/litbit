@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css"></style>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+	<script src="http://momentjs.com/downloads/moment.js"></script>
 
 	<script>
 	  // Initialize Firebase
@@ -20,6 +21,21 @@
 
 	<script src="scripts/main.js"></script>
 
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+  	<script src="https://vega.github.io/vega/vega.js"></script>
+  	<script src="https://vega.github.io/vega-lite/vega-lite.js"></script>
+  	<script src="https://vega.github.io/vega-editor/vendor/vega-embed.js" charset="utf-8"></script>
+
+  	<style media="screen">
+    	/* Add space between vega-embed links  */
+    	.vega-actions a {
+    	  margin-right: 5px;
+    	}
+  	</style>
+
+	<script src="scripts/main.js"></script>
+	<script src="scripts/inputUserData.js"></script>
+	<script src="scripts/lineGraph.js"></script>
 </head>
 <body>
 
@@ -54,10 +70,6 @@
 				</li>
 			</ul>
 
-<!-- 			<a href="/profileClick" id="profileClick">
-				<img class="photo" src="images/profile.svg" width="30" height="30" alt="">
-			</a> -->
-
 			<a class="NavItemProfile" href="#">
 				<img class="photo" src="images/settings.svg" width="30" height="30" alt="">
 			</a>
@@ -88,10 +100,30 @@
 
 		<div class="cards">
 			<div class="card">
-			<div class="container">
-					<h4><b>John Doe</b></h4> 
-					<p>Architect & Engineer</p> 
-				</div>
+<!-- <<<<<<< HEAD
+ -->			<div class="container">
+<!-- =======
+ -->				<div id="vis">
+					<!-- What user will use for input -->
+					<!--input placeholder='Email' type='text' id='email'-->
+					<!--input placeholder='Password' type='text' id='password'-->
+
+					<!-- button for sending message to message board -->
+					<button onclick='register()' id='js'>Register</button>
+					<button onclick='login()' id='js'>Login</button>
+					<button onclick='signout()' id='js'>Logout</button>
+
+					<br>
+
+					<input placeholder='Pages Read' type='number' id='pages'>
+					<input placeholder='Hours Read' type='number' id='time'>
+					<input placeholder='Goals Met' type='number' id='goals'>
+					<button onclick='updateDayInfo()' id='js'>Update Data</button>
+					<!-- Empty div where the messages will show up -->
+					<div id='messageBoard'></div>
+					<!-- Paste your snippet here, will include firebase CDN -->
+<!-- >>>>>>> origin/master
+ -->				</div>
 			</div>
 
 

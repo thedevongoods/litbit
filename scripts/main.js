@@ -1,5 +1,4 @@
 // SURENDRA CODE FOR STYLING STUFF 
-
 //SUBMISSION
 function deselect(e) {
   $('.pop').slideFadeToggle(function() {
@@ -29,7 +28,6 @@ $.fn.slideFadeToggle = function(easing, callback) {
 };
 
 //LOGIN
-
 $(document).ready(function(){
   $('#login-trigger').click(function(){
     $(this).next('#login-content').slideToggle();
@@ -42,15 +40,6 @@ $(document).ready(function(){
 
 
 // DEVON CODE FOR BACKEND
-var user = firebase.auth().currentUser;
-
-if(user){
-	console.log("Current user is " + user.email);
-} else {
-
-}
-console.log();
-
 function register(){
 	var email = $("#email").val();
 	var password =$("#password").val();
@@ -89,5 +78,3 @@ function signout(){
 	});
 
 }
-
-
