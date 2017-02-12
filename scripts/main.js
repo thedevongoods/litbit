@@ -1,5 +1,11 @@
 // SURENDRA CODE FOR STYLING STUFF 
-//SUBMISSION
+$('#message_submit').click(function() {
+  $('.card').toggle('slow', function() {
+    // Animation complete.
+  });
+});
+
+//DROP DOWN SUBMIT 
 function deselect(e) {
   $('.pop').slideFadeToggle(function() {
     e.removeClass('selected');
@@ -7,7 +13,7 @@ function deselect(e) {
 }
 
 $(function() {
-  $('#testLogoIMG').on('click', function() {
+  $('#contact').on('click', function() {
     if($(this).hasClass('selected')) {
       deselect($(this));               
     } else {
@@ -18,7 +24,7 @@ $(function() {
   });
 
   $('.close').on('click', function() {
-    deselect($('#testLogoIMG'));
+    deselect($('#contact'));
     return false;
   });
 });
@@ -37,6 +43,7 @@ $(document).ready(function(){
       else $(this).find('span').html('&#x25BC;')
     })
 });
+
 
 // DEVON CODE FOR BACKEND
 function register(){

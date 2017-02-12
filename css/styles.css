@@ -8,6 +8,8 @@ html {
 
 body{
 	margin: 0px;
+	background-color: #4683BF;
+
 }
 
 .nav{
@@ -17,12 +19,27 @@ body{
 	border: 1px solid #e7e7e7;
 	background-color: #FBFFFE;
 	padding: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    	position: relative;
+  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    position: relative;
 }
 
 .navBarContent{
-	padding: 20px;
+	padding-left: 3%;
+}
+
+.navBarContentLink{
+	padding-left: 5%;
+	font-size: 150%;
+	text-transform: uppercase;
+	color: #4683BF;
+	font-family:"Proxima Nova Bold", helvetica, arial, sans-serif;
+	text-decoration: none;
+	font-weight: 100;
+}
+
+.navBarcontentLink:visited{
+	color: #4683BF;
+	font-family:"Proxima Nova Bold", helvetica, arial, sans-serif;
 }
 
 .profile {
@@ -38,8 +55,12 @@ body{
 }
 
 #logo {
-	background: url(../images/litBit.svg) no-repeat;
-	width: 125px;
+	width: 200px;
+	height: 50px;
+}
+
+#logo img {
+	width: 100%;
 }
 
 #addLogoIMG{
@@ -50,7 +71,6 @@ body{
 
 .dashHeader{
 	padding: 1%;
-	background-color: #4683BF;
 	color: white;
 }
 
@@ -75,13 +95,17 @@ body{
 }
 
 .cardContainer{
- 	background-color: #4683BF;
- 	margin: 0;
- 	width: auto;
+    outline: white solid thick;
+ 	width: 40vw;
+ 	margin-left: 1vw;
+ 	height: auto;
+ 	max-width: 1100px;
+	margin: 0 auto;
 /* 	min-height: 50vw;
 */}
 
 /*SUBMISSION STYLES*/
+
 a.selected {
   background-color:#1F75CC;
   color:white;
@@ -114,25 +138,176 @@ label {
   padding-bottom: 8px;
 }
 
-/*CARD STYLES*/
-.cardContainer {
-	display: -webkit-flex;
-	display: flex;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-flex-wrap: wrap;
-	flex-wrap: wrap;
-	margin-top: 15px;
-	padding: 1.5%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+/* LOG IN FORM */
+ul{
+	    list-style-type: none;
+
 }
 
-.card{
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  float: right;
+  background: #eee;
+  border-bottom: 1px solid #fff;
+  border-radius: 3px;    
 }
 
-.sprite{
-	width: 30;
-	height: 30;
+nav li {
+  float: left;          
+}
+
+nav #login {
+  border-right: 1px solid #ddd;
+  box-shadow: 1px 0 0 #fff;  
+  display: inline;
+}
+
+nav #login-trigger,
+nav #signup a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 #fff; 
+}
+
+nav #signup a {
+  border-radius: 0 3px 3px 0;
+}
+
+nav #login-trigger {
+  border-radius: 3px 0 0 3px;
+}
+
+nav #login-trigger:hover,
+nav #login .active,
+nav #signup a:hover {
+  background: #fff;
+}
+
+nav #login-content {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  z-index: 999;    
+  background: #fff;
+  background-image: linear-gradient(top, #fff, #eee);  
+  padding: 15px;
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+  border-radius: 3px 0 3px 3px;
+}
+
+nav li #login-content {
+  right: 0;
+  width: 250px;  
+}
+
+/*--------------------*/
+
+#inputs input {
+  background: #f1f1f1;
+  padding: 6px 5px;
+  margin: 0 0 5px 0;
+  width: 238px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px #ccc inset;
+}
+
+#inputs input:focus {
+  background-color: #fff;
+  border-color: #e8c291;
+  outline: none;
+  box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+/*--------------------*/
+
+#login #actions {
+  margin: 10px 0 0 0;
+}
+
+#login #submit {    
+  background-color: #d14545;
+  background-image: linear-gradient(top, #e97171, #d14545);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+  border: 1px solid #7e1515;
+  float: left;
+  height: 30px;
+  padding: 0;
+  width: 100px;
+  cursor: pointer;
+  font: bold 14px Arial, Helvetica;
+  color: #fff;
+}
+
+#login #submit:hover,
+#login #submit:focus {    
+  background-color: #e97171;
+  background-image: linear-gradient(top, #d14545, #e97171);
+} 
+
+#login #submit:active {   
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
+}
+
+#login #submit::-moz-focus-inner {
+  border: none;
+}
+
+#login label {
+  float: right;
+  line-height: 30px;
+}
+
+#login label input {
+  position: relative;
+  top: 2px;
+  right: 2px;
+}
+
+.photo {
+	display: inline;
+}
+
+
+/*CARDS CSS STYLING*/
+
+.cards{
+	padding: 1%;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    max-width: 50%
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
 }

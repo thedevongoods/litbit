@@ -18,17 +18,20 @@
 	  };
 	  firebase.initializeApp(config);
 	</script>
-	<script src="https://d3js.org/d3.v3.min.js"></script>
-  	<script src="https://vega.github.io/vega/vega.js"></script>
-  	<script src="https://vega.github.io/vega-lite/vega-lite.js"></script>
-  	<script src="https://vega.github.io/vega-editor/vendor/vega-embed.js" charset="utf-8"></script>
 
-  	<style media="screen">
-    	/* Add space between vega-embed links  */
-    	.vega-actions a {
-    	  margin-right: 5px;
-    	}
-  	</style>
+	<script src="scripts/main.js"></script>
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://vega.github.io/vega/vega.js"></script>
+	<script src="https://vega.github.io/vega-lite/vega-lite.js"></script>
+	<script src="https://vega.github.io/vega-editor/vendor/vega-embed.js" charset="utf-8"></script>
+
+	<style media="screen">
+		/* Add space between vega-embed links  */
+		.vega-actions a {
+			margin-right: 5px;
+		}
+	</style>
 
 	<script src="scripts/main.js"></script>
 	<script src="scripts/inputUserData.js"></script>
@@ -37,28 +40,35 @@
 <body>
 
 	<div class="nav">
-		<div class="navBarContent" id="logo"></div>
-		<div class="navBarContent"><a href="">Dashboard</a></div>
-		<div class="navBarContent"><a href="">Log</a></div>
-		<div class="navBarContent"><a href="">Community</a></div>
+		<div class="navBarContent" id="logo">
+			<img src="images/litbit.png">
+		</div>
+		<div class="navBarContent"><a class="navBarContentLink" href="">Dashboard</a></div>
+		<div class="navBarContent"><a class="navBarContentLink" href="">Log</a></div>
+		<div class="navBarContent"><a class="navBarContentLink" href="">Community</a></div>
 
 		<div class="profile">
-			<a id="login-trigger">
-				<img class="photo" src="images/profile.svg" width="30" height="30" alt="">
-			</a>
-			<div id="login-content">
-				<form>
-					<fieldset id="inputs">
-						<input id="username" type="email" name="Email" placeholder="Your email address" required>   
-						<input id="password" type="password" name="Password" placeholder="Password" required>
-					</fieldset>
-					<fieldset id="actions">
-						<input type="submit" id="submit" value="Log In" onclick="login()">
-						<input type="submit" id="submit" value="Sign Up" onclick="register()">
-						<label><input type="checkbox" checked="checked"> Keep me signed in</label>
-					</fieldset>
-				</form>
-			</div>   
+
+			<ul>
+				<li id="login">
+					<a id="login-trigger" href="#" class="">
+						<span><img class="photo" src="images/profile.svg" width="30" height="30" alt=""></span>
+					</a>
+					<div id="login-content" style="display: none;">
+						<form>
+							<fieldset id="inputs">
+								<input id="username" type="email" name="Email" placeholder="Your email address" required="">   
+								<input id="password" type="password" name="Password" placeholder="Password" required="">
+							</fieldset>
+							<fieldset id="actions">
+								<input type="submit" id="submit" value="Log in">
+								<input type="submit" id="SignUpSubmit" value="Sign up">
+
+							</fieldset>
+						</form>
+					</div>                     
+				</li>
+			</ul>
 
 			<a class="NavItemProfile" href="#">
 				<img class="photo" src="images/settings.svg" width="30" height="30" alt="">
@@ -74,48 +84,38 @@
 					<strong class="weekday">Today</strong>
 					<p class="dateSet">February 11</p>
 				</div>
-				<a href="/testLogoIMG" id="testLogoIMG"><img id= "addLogoIMG" src="./images/plus.svg"></a>
+				<a href="/contact" id="contact"><img id= "addLogoIMG" src="./images/plus.svg"></a>
 			</div>
 		</div>
 
-<div class="messagepop pop">
-    <form method="post" id="new_message" action="/messages">
-        <p><label for="email">Your email</label><input type="text" size="30" name="email" id="email" /></p>
-		<p><label for="pages">Your pages</label><input type="number" size="30" name="number" id="number" /></p>
-        <p><label for="time">Your time</label><input type="number" size="30" name="time" id="time" /></p>
-        <p><input type="submit" value="Submit" name="commit" id="message_submit"/> or <a class="close" href="/">Cancel</a></p>
-    </form>
-</div>
+		<div class="messagepop pop">
+			<form method="post" id="new_message" action="/messages">
+				<p><label for="pages">Your pages</label><input type="number" size="30" name="number" id="number" /></p>
+				<p><label for="time">Your time</label><input type="number" size="30" name="time" id="time" /></p>
+				<p><label for="goals">Your goals</label><input type="number" size="30" name="goals" id="goals" /></p>
 
-		<div class="cardContainer">
-			<div class="card">
-				<div id="vis">
-					<!-- What user will use for input -->
-					<!--input placeholder='Email' type='text' id='email'-->
-					<!--input placeholder='Password' type='text' id='password'-->
+				<p><input type="submit" value="Submit" name="commit" id="message_submit" /> or <a class="close" href="/">Cancel</a></p>
+			</form>
+		</div>
 
-					<!-- button for sending message to message board -->
-					<button onclick='register()' id='js'>Register</button>
-					<button onclick='login()' id='js'>Login</button>
-					<button onclick='signout()' id='js'>Logout</button>
+		<div class="cards">
+			<div class="card" style="display: none">
+				<div class="container">
+					<div id="vis">
+						<!-- What user will use for input -->
+						<!--input placeholder='Email' type='text' id='email'-->
+						<!--input placeholder='Password' type='text' id='password'-->
 
-					<br>
+						<!-- button for sending message to message board -->
 
-					<input placeholder='Pages Read' type='number' id='pages'>
-					<input placeholder='Hours Read' type='number' id='time'>
-					<input placeholder='Goals Met' type='number' id='goals'>
-					<button onclick='updateDayInfo()' id='js'>Update Data</button>
-					<!-- Empty div where the messages will show up -->
-					<div id='messageBoard'></div>
-					<!-- Paste your snippet here, will include firebase CDN -->
+						<input placeholder='Pages Read' type='number' id='pages'>
+						<input placeholder='Hours Read' type='number' id='time'>
+						<input placeholder='Goals Met' type='number' id='goals'>
+						<button onclick='updateDayInfo()' id='js'>Update Data</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-
-
-
-
-</body>
-</html>
+	</body>
+	</html>
