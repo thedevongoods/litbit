@@ -15,7 +15,9 @@
       "x": {"field": "date", "type": "temporal"},
       "y": {"field": "value", "type": "quantitative"},
       "color":{"field":"symbol", "type":"nominal"}
-      }
+      },
+    "width": 500,
+    "height": 300
   };
   var embedSpec = {
     mode: "vega-lite",  // Instruct Vega-Embed to use the Vega-Lite compiler
