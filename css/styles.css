@@ -1,0 +1,120 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body{
+	margin: 0px;
+}
+
+.nav{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	border: 1px solid #e7e7e7;
+	background-color: #FBFFFE;
+	padding: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    	position: relative;
+}
+
+.navBarContent{
+	padding: 20px;
+}
+
+.profile {
+	float: right;
+	text-align: right;
+	flex: 1;
+}
+
+.card {
+	z-index: 0; 
+	left: 570px; 
+	top: 285px;
+}
+
+#logo {
+	background: url(../images/litBit.svg) no-repeat;
+	width: 125px;
+}
+
+#addLogoIMG{
+	height: 20px;
+	padding-left: 1%;
+	vertical-align: middle;
+}
+
+.dashHeader{
+	padding: 1%;
+	background-color: #4683BF;
+	color: white;
+}
+
+.timeIcon{
+	display: inline;
+}
+
+.timePeriod{
+	padding-left: 13px;
+	float: left;
+}
+
+.weekday {
+	text-transform: capitalize;
+	font-size: 18px;
+}
+
+.dateSet{
+	display: inline;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.cardContainer{
+ 	background-color: #4683BF;
+ 	margin: 0;
+ 	width: auto;
+/* 	min-height: 50vw;
+*/}
+
+
+
+
+
+
+
+a.selected {
+  background-color:#1F75CC;
+  color:white;
+  z-index:100;
+}
+
+.messagepop {
+  background-color:#FFFFFF;
+  border:1px solid #999999;
+  cursor:default;
+  display:none;
+  margin-top: 15px;
+  position:absolute;
+  text-align:left;
+  width:394px;
+  z-index:50;
+  padding: 25px 25px 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 3px;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+.messagepop p, .messagepop.div {
+  border-bottom: 1px solid #EFEFEF;
+  margin: 8px 0;
+  padding-bottom: 8px;
+}

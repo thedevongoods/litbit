@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>litBit</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css"></style>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="scripts/main.js"></script>
+</head>
+<body>
+
+	<div class="nav">
+		<div class="navBarContent" id="logo"></div>
+		<div class="navBarContent"><a href="">Dashboard</a></div>
+		<div class="navBarContent"><a href="">Log</a></div>
+		<div class="navBarContent"><a href="">Community</a></div>
+
+		<div class="profile">
+			<a id="login-trigger">
+				<img class="photo" src="images/profile.svg" width="30" height="30" alt="">
+			</a>
+			<div id="login-content">
+				<form>
+					<fieldset id="inputs">
+						<input id="username" type="email" name="Email" placeholder="Your email address" required>   
+						<input id="password" type="password" name="Password" placeholder="Password" required>
+					</fieldset>
+					<fieldset id="actions">
+						<input type="submit" id="submit" value="Log in">
+						<label><input type="checkbox" checked="checked"> Keep me signed in</label>
+					</fieldset>
+				</form>
+			</div>   
+
+			<a class="NavItemProfile" href="#">
+				<img class="photo" src="images/settings.svg" width="30" height="30" alt="">
+			</a>
+		</div>
+	</div>	
+
+	<div class="dashboard">
+		<div class="dashHeader">
+			<div class="dashDateNav">
+				<span class="timeIcon"></span>
+				<div class="timePeriod">
+					<strong class="weekday">Today</strong>
+					<p class="dateSet">February 11</p>
+				</div>
+				<a href="/testLogoIMG" id="testLogoIMG"><img id= "addLogoIMG" src="./images/plus.svg"></a>
+			</div>
+		</div>
+
+
+		<div class="cardContainer">
+			<div class="card">
+				<diV class="cardbody">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="messagepop pop">
+		<form method="post" id="new_message" action="/messages">
+			<p><label for="pages">Your email</label><input type="text" size="30" name="email" id="email" /></p>
+			<p><label for="times">Your times</label><input type="text" size="30" name="times" id="times" /></p>
+			<p><label for="goals">Your goals</label><input type="text" size="30" name="goals" id="goals" /></p>
+
+			<p><input type="submit" value="Submit" name="Submit" id="Submit"/> or <a class="close" href="/">Cancel</a></p>
+		</form>
+	</div>
+
+
+</body>
+</html>
