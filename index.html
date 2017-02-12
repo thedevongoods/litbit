@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +5,24 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css"></style>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="scripts/main.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	  	apiKey: "AIzaSyAczPNxSGslsGqyWWF1OsbTo4Ns6xjqeLQ",
+	  	authDomain: "litbit-5608e.firebaseapp.com",
+	  	databaseURL: "https://litbit-5608e.firebaseio.com",
+	  	storageBucket: "litbit-5608e.appspot.com",
+	  	messagingSenderId: "485234969235"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	<!-- adding jQuery -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<!-- script we'll make dynamic changes with. You'll have to create this file -->
+	<script src='main.js'></script>
+	<script src='inputUserData.js'></script>
 </head>
 <body>
 
@@ -53,7 +70,26 @@
 
 		<div class="cardContainer">
 			<div class="card">
-				<diV class="cardbody">
+				<div id="placeholder">
+					<!-- What user will use for input -->
+					<input placeholder='Email' type='text' id='email'>
+					<input placeholder='Password' type='text' id='password'>
+
+					<!-- button for sending message to message board -->
+					<button onclick='register()' id='js'>Register</button>
+					<button onclick='login()' id='js'>Login</button>
+					<button onclick='signout()' id='js'>Logout</button>
+
+					<br>
+
+					<input placeholder='Pages Read' type='number' id='pages'>
+					<input placeholder='Hours Read' type='number' id='time'>
+					<input placeholder='Goals Met' type='number' id='goals'>
+					<button onclick='updateDayInfo()' id='js'>Update Data</button>
+					<!-- Empty div where the messages will show up -->
+					<div id='messageBoard'></div>
+					<!-- Paste your snippet here, will include firebase CDN -->
+
 				</div>
 			</div>
 		</div>
@@ -72,49 +108,3 @@
 
 </body>
 </html>
-=======
- <html>
-  <head>
-	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyAczPNxSGslsGqyWWF1OsbTo4Ns6xjqeLQ",
-	    authDomain: "litbit-5608e.firebaseapp.com",
-	    databaseURL: "https://litbit-5608e.firebaseio.com",
-	    storageBucket: "litbit-5608e.appspot.com",
-	    messagingSenderId: "485234969235"
-	  };
-	  firebase.initializeApp(config);
-	</script>
-    <!-- adding jQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <!-- script we'll make dynamic changes with. You'll have to create this file -->
-    <script src='main.js'></script>
-    <script src='inputUserData.js'></script>
-
-  </head>
-  <body>
-    <!-- What user will use for input -->
-    <input placeholder='Email' type='text' id='email'>
-    <input placeholder='Password' type='text' id='password'>
-
-    <!-- button for sending message to message board -->
-    <button onclick='register()' id='js'>Register</button>
-    <button onclick='login()' id='js'>Login</button>
-    <button onclick='signout()' id='js'>Logout</button>
-
-    <br>
-
-    <input placeholder='Pages Read' type='number' id='pages'>
-    <input placeholder='Hours Read' type='number' id='time'>
-    <input placeholder='Goals Met' type='number' id='goals'>
-    <button onclick='updateDayInfo()' id='js'>Update Data</button>
-    <!-- Empty div where the messages will show up -->
-    <div id='messageBoard'></div>
-    <!-- Paste your snippet here, will include firebase CDN -->
-  </body>
-</html>
-
-
->>>>>>> origin/master
