@@ -1,9 +1,14 @@
 // SURENDRA CODE FOR STYLING STUFF 
-$('#message_submit').click(function() {
-  $('.card').toggle('slow', function() {
-    // Animation complete.
-  });
-});
+
+//HIDE CARDS UNTIL SUBMIT
+function showCard() {
+    var x = document.getElementById('cardToggle');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
 
 //DROP DOWN SUBMIT 
 function deselect(e) {
@@ -56,7 +61,6 @@ function register(){
 		var errorMessage = error.message;
 		// 
 	});
-
 }
 
 function login(){

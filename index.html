@@ -57,7 +57,7 @@
 					<div id="login-content" style="display: none;">
 						<form>
 							<fieldset id="inputs">
-								<input id="username" type="email" name="Email" placeholder="Your email address" required="">   
+								<input id="email" type="email" name="Email" placeholder="Your email address" required="">   
 								<input id="password" type="password" name="Password" placeholder="Password" required="">
 							</fieldset>
 							<fieldset id="actions">
@@ -89,17 +89,15 @@
 		</div>
 
 		<div class="messagepop pop">
-			<form method="post" id="new_message" action="/messages">
 				<p><label for="pages">Your pages</label><input type="number" size="30" name="number" id="number" /></p>
 				<p><label for="time">Your time</label><input type="number" size="30" name="time" id="time" /></p>
 				<p><label for="goals">Your goals</label><input type="number" size="30" name="goals" id="goals" /></p>
 
-				<p><input type="submit" value="Submit" name="commit" id="message_submit" /> or <a class="close" href="/">Cancel</a></p>
-			</form>
+				<p><input type="submit" id="message_submit" onclick="showCard()"/> or <a class="close" href="/">Cancel</a></p>
 		</div>
 
 		<div class="cards">
-			<div class="card" style="display: none">
+			<div id="cardToggle" class="card" style="display: none">
 				<div class="container">
 					<div id="vis">
 						<!-- What user will use for input -->
